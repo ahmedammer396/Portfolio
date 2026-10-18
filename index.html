@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+<title>Rana Hendawy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark command-center portfolio. Hero + KPI console, tools & time-saved dashboard,
+   tabbed work (ZFP / SLFE / ECG), journey timeline, fit, recognition. Deliberately single dark theme. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0F1C;--bg-2:#0E1526;--panel:#121A2D;--panel-2:#172238;
+  --line:rgba(150,172,214,.14);--line-2:rgba(150,172,214,.26);
+  --fg:#E9EEF8;--muted:#93A0BA;--dim:#64708A;
+  --blue:#5E8DFF;--blue-2:#9DB8FF;--blue-glow:rgba(94,141,255,.22);
+  --amber:#F4B54A;--amber-soft:rgba(244,181,74,.13);
+  --teal:#41CDB6;--teal-soft:rgba(65,205,182,.12);
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15.5px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px;
+  background-image:radial-gradient(900px 520px at 85% -120px,rgba(94,141,255,.20),transparent 70%),radial-gradient(700px 420px at -10% 240px,rgba(65,205,182,.08),transparent 70%);
+  background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--blue-2)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--f-display);margin:0;line-height:1.08;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:-4px;padding:12px 4px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:rgba(10,15,28,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--fg)}
+.mark{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:14px;background:linear-gradient(135deg,var(--blue),#7D5CFF);color:#fff}
+.nav-links{display:flex;gap:4px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.nav-links a:hover{color:var(--fg);background:var(--panel)}
+.nav-links a.cta{color:var(--bg);background:var(--fg);font-weight:600}
+@media (max-width:760px){.nav-links a:not(.cta){display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:44px;align-items:center;padding-block:64px 24px}
+@media (max-width:940px){.hero{grid-template-columns:1fr;padding-top:40px}}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--teal);background:var(--teal-soft);border:1px solid rgba(65,205,182,.25);padding:6px 12px;border-radius:999px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(65,205,182,.18)}
+.hero h1{font-size:clamp(42px,6.2vw,76px);font-weight:800;margin-top:20px}
+.grad{background:linear-gradient(100deg,var(--blue-2),#B79CFF 55%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .role{font-family:var(--f-display);font-size:clamp(19px,2.2vw,24px);font-weight:600;color:var(--blue-2);margin-top:14px}
+.hero .lead{font-size:16.5px;color:var(--muted);margin-top:14px;max-width:58ch;line-height:1.65}
+.hero .lead b{color:var(--fg);font-weight:600}
+.hero .lead-2{margin-top:8px;font-size:15px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid var(--line-2);color:var(--fg);background:var(--panel);cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 28px var(--blue-glow)}
+
+.console{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line-2);border-radius:18px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.portrait{position:relative;margin:-18px -18px 0;border-radius:18px 18px 0 0;overflow:hidden;background:#000;aspect-ratio:745/520}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(18,26,45,.92) 92%,var(--panel-2));pointer-events:none}
+.portrait figcaption{position:absolute;left:18px;right:18px;bottom:14px;z-index:1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.portrait figcaption b{font-family:var(--f-display);font-size:22px;font-weight:700}
+.portrait figcaption span{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);letter-spacing:.05em}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+@media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0;text-align:center}
+.kpi b{display:block;font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.kpi span{display:block;font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.3}
+.c-amber{color:var(--amber)}.c-blue{color:var(--blue-2)}.c-teal{color:var(--teal)}
+.award-strip{margin-top:8px;display:flex;gap:12px;align-items:center;background:var(--amber-soft);border:1px solid rgba(244,181,74,.28);border-radius:12px;padding:11px 14px;font-size:13.5px}
+.award-strip .ic{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:rgba(244,181,74,.2)}
+
+/* sections */
+section{padding-top:80px}
+.sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:24px}
+.sh h2{font-size:clamp(30px,4vw,42px);font-weight:750;margin-top:8px}
+.sh p{color:var(--muted);max-width:44ch}
+
+/* tools dashboard */
+.tools{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.t-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.t-summary > div{padding:18px 20px;border-right:1px solid var(--line);min-width:0}
+.t-summary > div:last-child{border-right:0}
+.t-summary b{display:block;font-family:var(--f-display);font-size:32px;font-weight:700;line-height:1.05;margin-top:6px;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.t-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.t-summary > div:nth-child(2){border-right:0}.t-summary > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.t-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.fbtn{font-family:inherit;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--muted);cursor:pointer}
+.fbtn:hover{color:var(--fg)}
+.fbtn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{padding:13px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(150,172,214,.04)}
+th{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .tn{font-weight:700}
+td .td{display:block;font-size:12.5px;color:var(--muted)}
+.org{font-family:var(--f-mono);font-size:11px;font-weight:500;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.o-zfp{color:var(--amber);background:var(--amber-soft)}
+.o-slfe{color:var(--teal);background:var(--teal-soft)}
+.o-ecg{color:var(--blue-2);background:rgba(94,141,255,.14)}
+.save{display:flex;align-items:center;gap:10px;min-width:150px}
+.save .bar{flex:1;height:7px;border-radius:99px;background:rgba(150,172,214,.12);overflow:hidden}
+.save .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--blue))}
+.save b{font-variant-numeric:tabular-nums;font-size:13px;min-width:38px;text-align:right}
+.na{color:var(--dim)}
+
+
+/* ECG library */
+.lib{scroll-margin-top:80px;margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.lib-head{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.lib-head h3{font-size:22px;font-weight:700}
+.lib-head h3 small{font-family:var(--f-mono);font-size:12px;font-weight:500;color:var(--blue-2);margin-left:8px;letter-spacing:.04em}
+.search{font:inherit;font-size:14px;padding:9px 12px;border-radius:10px;border:1px solid var(--line-2);background:var(--bg-2);color:var(--fg);width:240px;max-width:100%}
+.cats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+@media (max-width:860px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cat{font-family:inherit;text-align:left;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;min-width:0}
+.cat:hover{border-color:var(--line-2);color:var(--fg)}
+.cat[aria-pressed="true"]{border-color:var(--blue);background:rgba(94,141,255,.12);color:var(--fg)}
+.cat b{display:block;font-family:var(--f-display);font-size:22px;font-weight:700;color:var(--fg);line-height:1.1;font-variant-numeric:tabular-nums}
+.cat span{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat i{display:block;height:3px;border-radius:2px;background:var(--blue);margin-top:8px;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:16px 20px 20px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.tool{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tool:hover{border-color:var(--line-2)}
+.tool-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.tool .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-2)}
+.tool .sw{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line-2);border-radius:6px;padding:2px 6px;white-space:nowrap}
+.tool h5{margin:0;font-size:15px;font-weight:700;font-family:var(--f-body)}
+.tool p{font-size:13px;color:var(--muted);line-height:1.45}
+.disc{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
+.disc span{font-family:var(--f-mono);font-size:10px;padding:2px 6px;border-radius:5px;background:var(--panel-2);color:var(--fg)}
+.empty{padding:24px 20px;color:var(--muted)}
+
+.lib-ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.orgs{display:flex;padding:3px;border-radius:11px;background:var(--bg-2);border:1px solid var(--line-2)}
+.obtn{font-family:inherit;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;border:0;background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap}
+.obtn[aria-pressed="true"][data-o="zfg"]{background:var(--amber-soft);color:var(--amber)}
+.obtn[aria-pressed="true"][data-o="ecg"]{background:rgba(94,141,255,.16);color:var(--blue-2)}
+.tool.zf .k{color:var(--amber)}
+.tool .k em{font-style:normal;color:var(--teal)}
+
+/* tool profile modal */
+.tool{cursor:pointer;text-align:left;font:inherit;color:inherit}
+.tool:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.save-chip{font-family:var(--f-mono);font-size:10px;color:var(--teal);border:1px solid rgba(65,205,182,.4);border-radius:5px;padding:2px 6px}
+.obtn[aria-pressed="true"][data-o="all"]{background:var(--fg);color:var(--bg)}
+.tool .more{font-size:12px;color:var(--blue-2);display:flex;align-items:center;gap:6px;margin-top:2px}
+.vid-badge{font-family:var(--f-mono);font-size:10px;color:var(--bg);background:var(--teal);border-radius:5px;padding:2px 6px;letter-spacing:.04em}
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(5,8,16,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sheet-card{width:min(760px,100%);max-height:100%;overflow:auto;background:var(--panel);border:1px solid var(--line-2);border-radius:18px;box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.m-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:20px 22px 0}
+.m-head h3{font-size:26px;font-weight:750}
+.m-head .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-2)}
+.m-close{flex:none;width:36px;height:36px;border-radius:10px;border:1px solid var(--line-2);background:var(--bg-2);color:var(--fg);cursor:pointer;font-size:18px;line-height:1}
+.m-body{padding:14px 22px 22px;display:flex;flex-direction:column;gap:16px}
+.m-body > p{color:var(--muted);font-size:15px}
+.m-video{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
+.m-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-width:100%}
+.m-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.m-meta{grid-template-columns:1fr}}
+.m-meta div{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.m-meta b{display:block;font-size:14px;margin-top:2px}
+.m-feat{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.m-feat{grid-template-columns:1fr}}
+.m-feat li{display:flex;gap:8px;align-items:flex-start;font-size:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.m-feat li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--teal);margin-top:8px}
+.m-links{display:flex;flex-wrap:wrap;gap:8px}
+
+/* journey */
+.journey{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:860px){.journey{grid-template-columns:1fr}}
+.jsum{display:flex;flex-direction:column;gap:10px;position:sticky;top:90px}
+@media (max-width:860px){.jsum{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.jsum{grid-template-columns:1fr}}
+.js{background:var(--panel);border:1px solid var(--line);border-left:3px solid;border-radius:12px;padding:14px 16px;min-width:0}
+.js b{display:block;font-family:var(--f-display);font-size:24px;font-weight:700;margin-top:4px}
+.js > span:last-child{display:block;font-size:13px;color:var(--muted)}
+.js.zfp{border-left-color:var(--amber)}.js.zfp b{color:var(--amber)}
+.js.ecg{border-left-color:var(--blue)}.js.ecg b{color:var(--blue-2)}
+.js.eng{border-left-color:var(--dim)}
+.jlist{list-style:none;margin:0;padding:0;position:relative}
+.jlist::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--amber),var(--blue) 18%,var(--blue) 62%,var(--dim))}
+.jr{position:relative;padding-left:36px;padding-bottom:12px}
+.jr:last-child{padding-bottom:0}
+.jdot{position:absolute;left:2px;top:20px;width:16px;height:16px;border-radius:50%;border:3px solid var(--bg);background:var(--dim)}
+.j-ecg .jdot{background:var(--blue)}
+.j-zfp .jdot{background:var(--amber);box-shadow:0 0 0 5px rgba(244,181,74,.18)}
+.jcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.j-zfp .jcard{border-color:rgba(244,181,74,.4);background:linear-gradient(160deg,rgba(244,181,74,.10),var(--panel) 55%)}
+.jtop{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.jdate{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.jnow{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:2px 8px}
+.jcard h4{font-size:18px;font-weight:700;margin-top:6px;font-family:var(--f-body);letter-spacing:0}
+.jco{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.j-zfp .jco{color:var(--amber)}.j-ecg .jco{color:var(--blue-2)}.j-eng .jco{color:var(--muted)}
+.jcard p{font-size:13.5px;color:var(--muted);margin-top:6px}
+/* timeline */
+.timeline{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 16px}
+.tl-scroll{overflow-x:auto}
+.tl{position:relative;min-width:820px;height:178px}
+.tl-year{position:absolute;bottom:0;transform:translateX(-50%);font-family:var(--f-mono);font-size:11px;color:var(--dim)}
+.tl-tick{position:absolute;bottom:18px;width:1px;height:9px;background:var(--line-2)}
+.tl-bar{position:absolute;height:34px;border-radius:9px;padding:0 10px;display:flex;align-items:center;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid}
+.tl-bar.eng{background:rgba(147,160,186,.12);border-color:rgba(147,160,186,.3);color:var(--muted)}
+.tl-bar.ecg{background:rgba(94,141,255,.16);border-color:rgba(94,141,255,.45);color:var(--blue-2)}
+.tl-bar.zfp{background:rgba(244,181,74,.18);border-color:rgba(244,181,74,.55);color:var(--amber)}
+
+/* work tabs */
+.dash{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tabs{display:flex;gap:10px;padding:10px;border-bottom:1px solid var(--line);background:var(--bg-2);overflow-x:auto}
+.tgroup{display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid var(--line);border-radius:14px;flex:1 0 auto}
+.tgroup.grp-zfg{flex-grow:2;border-color:rgba(244,181,74,.3);background:linear-gradient(180deg,rgba(244,181,74,.06),transparent)}
+.glabel{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-left:4px}
+.grp-zfg .glabel{color:var(--amber)}
+.trow{display:flex;gap:6px}
+.tab{flex:1 0 auto;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:11px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;text-align:left;font-family:inherit;min-width:190px}
+.tab:hover{color:var(--fg);background:var(--panel)}
+.tab[aria-selected="true"]{background:var(--panel-2);border-color:var(--line-2);color:var(--fg)}
+.tab .logo{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:12.5px}
+.tab .t{display:block;font-weight:700;font-size:14.5px}
+.tab .s{display:block;font-size:12px;color:var(--dim)}
+.lg-zfp{background:var(--amber-soft);color:var(--amber);border:1px solid rgba(244,181,74,.35)}
+.lg-slfe{background:var(--teal-soft);color:var(--teal);border:1px solid rgba(65,205,182,.35)}
+.lg-ecg{background:rgba(94,141,255,.14);color:var(--blue-2);border:1px solid rgba(94,141,255,.4)}
+.panel{padding:24px}
+.p-head h3{font-size:clamp(22px,2.8vw,30px);font-weight:750}
+.p-head p{color:var(--muted);margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.stat b{display:block;font-family:var(--f-display);font-size:26px;font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.35}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0;display:flex;flex-direction:column;gap:12px;transition:border-color .2s}
+.card:hover{border-color:var(--line-2)}
+.card.wide{grid-column:1/-1}
+.card-top{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
+.tag.live{color:var(--teal);border-color:rgba(65,205,182,.4);background:var(--teal-soft)}
+.tag.ai{color:#C4B2FF;border-color:rgba(183,156,255,.4);background:rgba(183,156,255,.1)}
+.card h4{font-size:20px;font-weight:700}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.card li + li{margin-top:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{font-family:var(--f-mono);font-size:11.5px;padding:4px 9px;border-radius:7px;background:var(--panel-2);border:1px solid var(--line);color:var(--fg)}
+.pipe{display:flex;flex-wrap:wrap;gap:8px 0}
+.pipe .st{display:flex;align-items:center}
+.pipe .nd{background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:9px 12px;font-size:13px;font-weight:600;line-height:1.25}
+.pipe .nd.h{border-color:rgba(65,205,182,.6);background:var(--teal-soft);color:var(--teal)}
+.pipe .st:not(:last-child)::after{content:"";width:20px;height:2px;background:linear-gradient(90deg,var(--blue),transparent);margin:0 2px}
+@media (max-width:640px){.pipe{flex-direction:column;gap:0}.pipe .st{flex-direction:column;align-items:stretch}.pipe .st:not(:last-child)::after{width:2px;height:12px;margin:0 0 0 18px;background:var(--blue)}}
+
+/* fit */
+.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:860px){.fit{grid-template-columns:1fr}}
+.fit-row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center;min-width:0;font-weight:600;font-size:14.5px}
+.fit-row .ok{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal)}
+
+/* awards */
+.awards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.awards{grid-template-columns:1fr}}
+.aw{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}
+.aw.win{background:linear-gradient(160deg,rgba(244,181,74,.16),var(--panel) 60%);border-color:rgba(244,181,74,.4)}
+.aw .yr{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.aw h4{font-size:18px;font-weight:700;margin-top:10px}
+.aw .res{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-2)}
+.aw.win .res{color:var(--amber)}
+.talks{margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:6px 18px}
+.talks li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:14px;align-items:baseline}
+.talks li:first-child{border-top:0}
+.talks ul{list-style:none;margin:0;padding:0}
+.talks .y{font-family:var(--f-mono);color:var(--dim);font-size:12.5px}
+.talks .w{color:var(--muted);font-size:13px;text-align:right}
+@media (max-width:640px){.talks li{grid-template-columns:48px minmax(0,1fr)}.talks .w{grid-column:2;text-align:left}}
+
+/* contact */
+.contact{border-radius:20px;padding:40px 32px;border:1px solid var(--line-2);
+  background:radial-gradient(600px 300px at 90% 0%,rgba(94,141,255,.28),transparent 70%),linear-gradient(180deg,var(--panel-2),var(--panel));
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:30px 20px}}
+.contact h2{font-size:clamp(26px,3.6vw,40px);font-weight:750}
+.mail{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mail code{font-family:var(--f-mono);font-size:14px;padding:11px 14px;border-radius:10px;border:1px solid var(--line-2);background:var(--bg-2);user-select:all;word-break:break-all}
+footer{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:12.5px;color:var(--dim)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="nav">
+  <a class="brand" href="#top"><span class="mark">RH</span><span>Rana Hendawy</span></a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#tools">Tools</a><a href="#ecg-library">Tool library</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#recognition">Awards</a><a class="cta" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="top" style="padding-top:64px">
+  <div>
+    <span class="status"><i></i>Engineering Technology &amp; AI Lead</span>
+    <h1>Turning engineering hours into <span class="grad">engineering capacity.</span></h1>
+    <p class="role">R&amp;D Unit Head · AI &amp; BIM Automation</p>
+    <p class="lead">R&amp;D and digital-transformation leader with <b>13+ years in AEC</b>. I head the R&amp;D Unit at <b>Zuhair Fayez Partnership</b>, building the BIM automation, custom software and AI systems engineering teams run on: Revit, AutoCAD and Civil 3D add-ins, cloud tools on Autodesk Platform Services, and LLM agents in live production.</p>
+    <p class="lead lead-2">Previously founded and led the Engineering Development Department at <b>ECG</b>. M.Sc. Structural Engineering, Cairo University.</p>
+    <div class="btns">
+      <a class="btn primary" href="#ecg-library">Tool library</a>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="console">
+    <figure class="portrait" style="margin-bottom:0">
+      <img src="rana.jpg" alt="Portrait of Rana Hendawy" width="745" height="600">
+      <figcaption><b>Rana Hendawy</b><span>ZFP · Cairo</span></figcaption>
+    </figure>
+    <div class="kpis">
+      <div class="kpi"><b class="c-blue">13+</b><span>years in AEC</span></div>
+      <div class="kpi"><b class="c-teal">50+</b><span>tools shipped</span></div>
+      <div class="kpi"><b class="c-amber">70%</b><span>peak time saved</span></div>
+      <div class="kpi"><b>2</b><span>R&amp;D units built</span></div>
+    </div>
+    <div class="award-strip">
+      <span class="ic" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F4B54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
+      <span><b>Construction Professional of the Year 2026</b> · BIG 5 Egypt</span>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="sh">
+    <div><span class="eyebrow">Tools &amp; impact</span><h2>Every tool I've shipped</h2></div>
+    <p>Open any tool for a short profile, demo video and time saved.</p>
+  </div>
+  <div class="tools">
+    <div class="t-summary">
+      <div><span class="eyebrow">Tools shipped</span><b class="c-teal">50+</b></div>
+      <div><span class="eyebrow">Avg. time saved</span><b class="c-blue" id="avgSave">—</b></div>
+      <div><span class="eyebrow">Peak time saved</span><b class="c-amber">70%</b></div>
+      <div><span class="eyebrow">Less manual effort</span><b>~30%</b></div>
+    </div>
+  </div>
+
+  <div class="lib" id="ecg-library">
+    <div class="lib-head">
+      <h3>Tool library<small id="libCount"></small></h3>
+      <div class="lib-ctrl">
+        <div class="orgs" role="group" aria-label="Company">
+          <button class="obtn" type="button" data-o="all" aria-pressed="true">All</button>
+          <button class="obtn" type="button" data-o="zfg" aria-pressed="false">Zuhair Fayez Group</button>
+          <button class="obtn" type="button" data-o="ecg" aria-pressed="false">ECG</button>
+        </div>
+        <input class="search" id="q" type="search" placeholder="Search tools" aria-label="Search tools">
+      </div>
+    </div>
+    <div class="cats" id="cats" role="group" aria-label="Filter by category"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sh">
+    <div><span class="eyebrow">Work</span><h2>Selected projects</h2></div>
+  </div>
+  <div class="dash">
+    <div class="tabs" role="tablist" aria-label="Companies">
+      <div class="tgroup grp-zfg" role="presentation">
+        <span class="glabel">Zuhair Fayez Group · 2025 – now</span>
+        <div class="trow" role="presentation">
+          <button class="tab" role="tab" id="t-zfp" aria-controls="p-zfp" aria-selected="true"><span class="logo lg-zfp">ZFP</span><span><span class="t">ZFP</span><span class="s">AEC workflows</span></span></button>
+          <button class="tab" role="tab" id="t-slfe" aria-controls="p-slfe" aria-selected="false" tabindex="-1"><span class="logo lg-slfe">SLFE</span><span><span class="t">SLFE</span><span class="s">Procurement AI</span></span></button>
+        </div>
+      </div>
+      <div class="tgroup" role="presentation">
+        <span class="glabel">Previous · 2018 – 2025</span>
+        <div class="trow" role="presentation">
+          <button class="tab" role="tab" id="t-ecg" aria-controls="p-ecg" aria-selected="false" tabindex="-1"><span class="logo lg-ecg">ECG</span><span><span class="t">ECG</span><span class="s">Engineering Consultants Group</span></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-zfp" aria-labelledby="t-zfp">
+      <div class="p-head"><h3>AI-Powered AEC Workflows</h3><p>BIG 5 Global 2026 finalist, Best Use of Technology (AI).</p></div>
+      <div class="stats">
+        <div class="stat"><b class="c-amber">Finalist</b><span>BIG 5 Global 2026</span></div>
+        <div class="stat"><b>7,392</b><span>BIM families synced</span></div>
+        <div class="stat"><b>15</b><span>content collections</span></div>
+        <div class="stat"><b>MCP</b><span>AI agents in Revit</span></div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="tag ai">AI agent</span><span class="tag live">Live</span></div>
+          <h4>ZFP Node AI</h4>
+          <ul><li>Plain-language commands run in Revit</li><li>Auto dimensioning, linked openings, sheet queries</li></ul>
+          <div class="chips"><span class="chip">C#</span><span class="chip">Revit API</span><span class="chip">MCP</span><span class="chip">Claude</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag">Data</span><span class="tag live">Live</span></div>
+          <h4>BOQ &amp; Cost Portal</h4>
+          <ul><li>BIM library → priced BOQ, no retyping</li><li>Tender team sets rates in a web portal</li></ul>
+          <div class="chips"><span class="chip">APS API</span><span class="chip">OAuth</span><span class="chip">SQL</span><span class="chip">Web</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-slfe" aria-labelledby="t-slfe" hidden>
+      <div class="p-head"><h3>TBE Workbench</h3><p>AI reads supplier offers and drafts the technical bid evaluation.</p></div>
+      <div class="stats">
+        <div class="stat"><b class="c-teal">Python</b><span>OCR + RAG pipeline</span></div>
+        <div class="stat"><b>5</b><span>stages automated</span></div>
+        <div class="stat"><b>3</b><span>deployment options designed</span></div>
+        <div class="stat"><b>Offline</b><span>local AI, OCR and storage</span></div>
+      </div>
+      <div class="cards">
+        <article class="card wide">
+          <div class="card-top"><span class="tag ai">Phase 1</span></div>
+          <div class="pipe">
+            <div class="st"><div class="nd">Auto-fill MR</div></div>
+            <div class="st"><div class="nd">Build MR</div></div>
+            <div class="st"><div class="nd">Issue package</div></div>
+            <div class="st"><div class="nd">AI clarifications</div></div>
+            <div class="st"><div class="nd h">Engineer approves TBE</div></div>
+          </div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">OCR</span><span class="chip">bge-m3</span><span class="chip">Qdrant</span><span class="chip">Ollama</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-ecg" aria-labelledby="t-ecg" hidden>
+      <div class="p-head"><h3>Founded Engineering Development</h3><p>BIM engineer to department manager in seven years.</p></div>
+      <div class="stats">
+        <div class="stat"><b class="c-blue">50+</b><span>tools built</span></div>
+        <div class="stat"><b>~30%</b><span>less manual effort</span></div>
+        <div class="stat"><b>70%</b><span>peak efficiency gain</span></div>
+        <div class="stat"><b>ISO 19650</b><span>standards rolled out</span></div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="tag">Revit add-ins</span></div>
+          <h4>Production tools</h4>
+          <ul><li>Smart Dimensions, View Slicer, Sheet Creation</li><li>CAD2Revit, Feeders &amp; Cables, Beam Generator</li><li>See all 40 in the tool library</li></ul>
+          <div class="chips"><span class="chip">C#</span><span class="chip">Revit API</span><span class="chip">Dynamo</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="tag">Leadership</span></div>
+          <h4>Built the department</h4>
+          <ul><li>Vision, targets and team</li><li>BIM standards and training</li></ul>
+          <div class="chips"><span class="chip">R&amp;D strategy</span><span class="chip">ISO 19650</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="sh"><div><span class="eyebrow">Journey</span><h2>Career path, 2013 → today</h2></div></div>
+  <div class="journey">
+    <div class="jsum">
+      <div class="js zfp"><span class="eyebrow">ZFP</span><b>2025 – now</b><span>R&amp;D Unit Head</span></div>
+      <div class="js ecg"><span class="eyebrow">ECG</span><b>6.5 yrs</b><span>4 roles · engineer → manager</span></div>
+      <div class="js eng"><span class="eyebrow">Engineering &amp; teaching</span><b>5 yrs</b><span>Structural design · lecturing</span></div>
+    </div>
+    <ol class="jlist">
+      <li class="jr j-zfp now"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">May 2025 – Present</span><span class="jnow">Current</span></div>
+          <h4>R&amp;D Unit Head</h4><span class="jco">ZFP · Zuhair Fayez Partnership</span><p>Leads the R&amp;D Unit and the firm's AI and BIM-automation agenda. BIG 5 Global 2026 AI finalist.</p></div></li>
+      <li class="jr j-ecg"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Jan 2023 – May 2025</span></div>
+          <h4>Engineering Development Department Manager</h4><span class="jco">ECG · Engineering Consultants Group</span><p>Founded the department; led BIM automation, software and ISO 19650 rollout.</p></div></li>
+      <li class="jr j-ecg"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Jan 2021 – Dec 2023</span></div>
+          <h4>Deputy Manager, Engineering Development</h4><span class="jco">ECG</span><p>Managed software development, support and training for large projects.</p></div></li>
+      <li class="jr j-ecg"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Jul 2020 – Apr 2021</span></div>
+          <h4>Engineering Software Developer</h4><span class="jco">ECG</span><p>Built Revit tools: Auto Dimension, Family Parameter Modifier, View Duplicator.</p></div></li>
+      <li class="jr j-ecg"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Nov 2018 – Jul 2020</span></div>
+          <h4>BIM (R&amp;D) Engineer</h4><span class="jco">ECG</span><p>Automated production tasks with Dynamo; set LOD standards.</p></div></li>
+      <li class="jr j-eng"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Sep 2016 – Nov 2018</span></div>
+          <h4>Lecturer</h4><span class="jco">El Shorouk Academy</span><p>Taught MATLAB, SAP2000 and numerical analysis.</p></div></li>
+      <li class="jr j-eng"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Jan 2014 – Dec 2016</span></div>
+          <h4>Structural Design Engineer</h4><span class="jco">Dr. Mohamed Ragaei Office</span><p>Reinforced-concrete design with SAP2000, ETABS and SAFE.</p></div></li>
+      <li class="jr j-eng"><span class="jdot" aria-hidden="true"></span>
+        <div class="jcard"><div class="jtop"><span class="jdate">Aug 2013 – Jan 2014</span></div>
+          <h4>Civil Engineer</h4><span class="jco">Consultant Engineering Office, Cairo</span><p>RC design, documentation and code review.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="fit">
+  <div class="sh"><div><span class="eyebrow">Role fit</span><h2>What I bring</h2></div></div>
+  <div class="fit" id="fitgrid"></div>
+</section>
+
+<section id="recognition">
+  <div class="sh"><div><span class="eyebrow">Recognition</span><h2>Awards &amp; talks</h2></div></div>
+  <div class="awards">
+    <div class="aw win"><span class="yr">2026 · BIG 5 Egypt</span><h4>Construction Professional of the Year</h4><span class="res">Winner</span></div>
+    <div class="aw"><span class="yr">2026 · BIG 5 Global</span><h4>Best Use of Technology (AI)</h4><span class="res">Finalist</span></div>
+    <div class="aw"><span class="yr">2026 · ConTech Awards UAE</span><h4>ConTech Rising Star</h4><span class="res">Shortlisted</span></div>
+  </div>
+  <div class="talks"><ul>
+    <li><span class="y">2025</span><b>Technology Leader · Impact Leadership Team</b><span class="w">Finalist · BIG 5 Egypt</span></li>
+    <li><span class="y">2024</span><b>Technology Leader · Impact Leadership Team</b><span class="w">Finalist · BIG 5 Dubai</span></li>
+    <li><span class="y">2024</span><b>Talk: The Power of Automation in AEC</b><span class="w">BIG 5 Egypt</span></li>
+    <li><span class="y">2023</span><b>Talk: Automation Success Stories</b><span class="w">Autodesk · ECG Tech Day</span></li>
+  </ul></div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div><span class="eyebrow">Contact</span><h2 style="margin-top:10px">Let's talk.</h2></div>
+    <div class="mail"><code id="email">ranaabdelfattah0@gmail.com</code><button class="btn primary" id="copy" type="button">Copy email</button></div>
+  </div>
+  <footer><span>© 2026 Rana Hendawy</span><span>AI · BIM · Automation</span></footer>
+</section>
+
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="m-head"><div><span class="k" id="mCat"></span><h3 id="mTitle" style="margin-top:6px"></h3></div>
+      <button class="m-close" id="mClose" type="button" aria-label="Close">&times;</button></div>
+    <div class="m-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ===== Tool library ===== */
+  var profiles={
+    "ECG Sheet Creation":{v:"V1.4",compat:"Revit 2018–2021",
+      f:["Create multiple sheets at once","Import sheet numbers and names from a text file","Assign one or more views to each sheet","Place views in the centre of the title block"],
+      vid:"media/sheet-creation.mp4",poster:"media/sheet-creation.jpg",guide:"media/sheet-creation-guide.pdf"},
+    "ECG Pro Tag":{v:"V2.0",compat:"Navisworks Manage 2020",
+      f:["Tag elements with Quick Property data in any viewpoint","Spot elevations relative to a level, base point or survey point","Preview-and-tag, preview-only or tag-only modes","Custom tag colour, text size, arrow and offset"],
+      vid:"media/pro-tag.mp4",poster:"media/pro-tag.jpg"},
+    "TBE Workbench":{v:"Advanced working prototype",compat:"Python · fully offline",
+      f:["Vendor offers processed from the original files, no re-entry","Every decision linked to the exact page in the vendor's file","AI rates each requirement: comply, clarification, engineer review, insufficient evidence","Draft clarifications per vendor, filled into the official TBC template","Local AI models, vector database, OCR and storage"],
+      vid:"media/tbe.mp4",poster:"media/tbe.jpg"},
+    "ZFP Node AI":{compat:"Revit 2024 + Claude",
+      f:["Plain-language requests in English or Arabic","Create wall openings from linked models","Pull sheets, views, schedules and project data on demand","Auto-dimension columns to grids","Live connector status between Revit and Claude"],
+      vid:"media/node-ai.mp4",poster:"media/node-ai.jpg"},
+    "ECG Clash Analyzer":{v:"V1",compat:"Civil 3D",
+      f:["Load Navisworks clash results into Civil 3D","Track each clash: new, active, reviewed, approved, resolved","3D preview and select the clashing element in the drawing","Sync runs to see what changed","Charts per test and a branded PDF report"],
+      vid:"media/clash-analyzer.mp4",poster:"media/clash-analyzer.jpg"},
+    "ECG CoREV":{compat:"Revit",
+      f:["Import Navisworks clash results into Revit","Section box and isolate clashing elements","Assign, comment and set status per clash","Email clashes to the responsible team","Visual review from HTML reports, progress saved to XML"],
+      vid:"media/corev.mp4",poster:"media/corev.jpg"},
+    "ECG Str. Smart Dimensions":{v:"V2.0",compat:"Revit",
+      f:["Dimension columns, shear walls and cores to the nearest grids","Run on all elements in many plan views at once","Choose dimension type, offset and limit","Optional steel columns"],
+      vid:"media/str-smart-dimensions.mp4",poster:"media/str-smart-dimensions.jpg"},
+    "ECG CAD2Revit":{compat:"Revit",
+      f:["Pick a CAD link and the layer to convert","Create ducts, pipes, conduits or cable trays","Set type, system, size and offset before converting"],
+      vid:"media/cad2revit.mp4",poster:"media/cad2revit.jpg"},
+    "ExBOQ v2":{v:"V2.0",compat:"Revit 2024",
+      f:["Export many Revit schedules in one click","Excel and PDF in the firm's BOQ format","Stage and version stamped on every export","Templates, rules and support inside the tool"],
+      vid:"media/exboq.mp4",poster:"media/exboq.jpg"},
+    "BOQ & Cost Portal":{compat:"Web · Microsoft 365 sign-in",
+      f:["BOQ projects organised by building","Upload, combine and compare discipline BOQs","Version history and change comparison","Export combined BOQ to Excel and PDF"],
+      vid:"media/finalcombine.mp4",poster:"media/finalcombine.jpg"},
+    "Family Generator v1":{v:"V1",compat:"Revit 2024",
+      f:["Create and update finish materials with colour and pattern","Generate floor types from naming tokens: size, type, colour, pattern, finish","Build layered floor structures","Names and descriptions follow ZFP standards"],
+      vid:"media/famgenerator.mp4",poster:"media/famgenerator.jpg"},
+    "Linked Openings":{compat:"Revit 2024",
+      f:["Cut wall openings from linked windows, doors and curtain walls","Use all loaded links or pick specific ones","Process all host walls or only selected walls","Review created openings in a results list"],
+      vid:"media/linked-openings.mp4",poster:"media/linked-openings.jpg"}
+  };
+
+  var lib=[{"n": "ZFP Node AI", "c": "AI", "s": "Revit + Claude", "d": "AI agent that runs model tasks in Revit from plain-language requests.", "x": ["BIM", "STR", "ARCH", "MEP"], "o": "zfg"}, {"n": "TBE Workbench", "c": "AI", "s": "Python", "d": "AI reads supplier offers and drafts the technical bid evaluation.", "x": ["Procurement"], "o": "zfg"}, {"n": "BOQ Compiler", "c": "BOQ & Cost", "s": "Revit", "d": "Compile bills of quantities from model data.", "x": ["BIM", "ARCH", "MEP"], "o": "zfg"}, {"n": "ExBOQ v2", "c": "BOQ & Cost", "s": "Revit", "d": "Export Revit schedules to formatted Excel and PDF BOQs.", "x": ["BIM", "ARCH", "MEP"], "o": "zfg"}, {"n": "BOQ & Cost Portal", "c": "BOQ & Cost", "s": "Web + APS", "d": "Web portal to upload, combine, version and compare BOQs by building.", "x": ["Tendering"], "o": "zfg"}, {"n": "Family Generator v1", "c": "Modeling", "s": "Revit", "d": "Generate standard materials and floor types from naming tokens.", "x": ["BIM"], "o": "zfg"}, {"n": "Linked Openings", "c": "Modeling", "s": "Revit", "d": "Create openings from elements in linked models.", "x": ["STR", "ARCH", "MEP"], "o": "zfg", "b": "Beta"}, {"n": "ECG Revit Menu", "c": "General", "s": "Revit", "d": "Preview families in 3D with their parameters and insert them into the model.", "x": ["BIM", "STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG BOQ Exporter & Viewer", "c": "General", "s": "Revit", "d": "Extract a BOQ Excel sheet directly from the model.", "x": ["BIM", "MEP"], "o": "ecg"}, {"n": "ECG Escalator Checker", "c": "General", "s": "Desktop app", "d": "Check escalator dimensions against requirements.", "x": ["ARCH"], "o": "ecg"}, {"n": "ECG Auto Saver", "c": "General", "s": "Revit", "d": "Auto-save and auto-sync Revit files.", "x": ["STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG Family Upgrader", "c": "General", "s": "Revit", "d": "Bulk-upgrade families from a folder.", "x": ["BIM"], "o": "ecg"}, {"n": "ECG Clean Backups", "c": "General", "s": "Revit", "d": "Clean Revit backup files from a folder.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG AutoLevel", "c": "General", "s": "AutoCAD", "d": "Change level heights for permit drawings.", "x": ["ARCH", "LS"], "o": "ecg"}, {"n": "ECG Pro Tag", "c": "Coordination", "s": "Navisworks", "d": "Tag elements with predefined properties in viewpoints.", "x": ["BIM"], "o": "ecg"}, {"n": "ECG Clash Analyzer", "c": "Coordination", "s": "Civil 3D", "d": "Select clashing elements in Civil 3D and preview clashes.", "x": ["BIM", "INF"], "o": "ecg"}, {"n": "ECG CoREV", "c": "Coordination", "s": "Revit", "d": "Select clashing elements in Revit and preview clashes.", "x": ["BIM", "STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG LinkedElementByID", "c": "Coordination", "s": "Revit", "d": "Select elements by ID from linked models and read their IDs.", "x": ["BIM", "STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG LifeSafetyPlans", "c": "Sheet Production", "s": "Revit", "d": "Add life-safety details, wall fire ratings and door tags to a view.", "x": ["ARCH"], "o": "ecg"}, {"n": "ECG Sheet Creation", "c": "Sheet Production", "s": "Revit", "d": "Create sheets and place views centred automatically, or import sheets from a text file.", "x": ["STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG Sheet Revision", "c": "Sheet Production", "s": "Revit", "d": "Add and manage revisions on all or selected sheets.", "x": ["STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG View Slicer", "c": "Sheet Production", "s": "Revit", "d": "Slice plan views by scope box and create dependent views and sheets.", "x": ["BIM", "STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG Duplicates Validator", "c": "Sheet Production", "s": "Revit", "d": "Find duplicated tags, preview their data and delete them.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG ScopeBox Assigner", "c": "Sheet Production", "s": "Revit", "d": "Assign scope boxes to multiple views at once.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG Blocks Tagger", "c": "Sheet Production", "s": "AutoCAD", "d": "Tag AutoCAD blocks in bulk with their block names.", "x": ["ARCH", "LS"], "o": "ecg"}, {"n": "ECG Arch Smart Dimensions", "c": "Sheet Production", "s": "Revit", "d": "Dimension all grids and walls automatically.", "x": ["ARCH"], "o": "ecg"}, {"n": "ECG Str. Smart Dimensions", "c": "Sheet Production", "s": "Revit", "d": "Dimension columns, shear walls and cores to the nearest grids.", "x": ["STR"], "o": "ecg"}, {"n": "ECG Room Duplicator", "c": "Modeling", "s": "Revit", "d": "Copy architectural and MEP families between rooms on different levels.", "x": ["ARCH", "MEP"], "o": "ecg"}, {"n": "ECG Automatic Distribution", "c": "Modeling", "s": "Revit", "d": "Distribute families across a room automatically.", "x": ["ARCH", "MEP"], "o": "ecg"}, {"n": "ECG CAD2Revit", "c": "Modeling", "s": "Revit", "d": "Create pipes, ducts, conduits or cable trays from CAD.", "x": ["MEP"], "o": "ecg"}, {"n": "ECG Feeders & Cables", "c": "Modeling", "s": "Revit", "d": "Create feeders and auto-size cables and breakers.", "x": ["MEP"], "o": "ecg"}, {"n": "ECG Dispro", "c": "Modeling", "s": "Revit", "d": "Add electrical disconnectors and isolators for linked elements.", "x": ["MEP"], "o": "ecg"}, {"n": "ECG Unhosted Detector", "c": "Modeling", "s": "Revit", "d": "Highlight unhosted or orphaned families in one or more views.", "x": ["MEP"], "o": "ecg"}, {"n": "ECG PipesTrimmer", "c": "Modeling", "s": "Revit", "d": "Join and trim all unconnected pipes.", "x": ["MEP"], "o": "ecg"}, {"n": "ECG Easy Filter", "c": "Information", "s": "Revit", "d": "Filter elements by category, family and type, and save selection sets.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG Parameter Manager", "c": "Information", "s": "Revit", "d": "Set instance or type parameter values for all elements of a type.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG Families Parameters Modifier", "c": "Information", "s": "Revit", "d": "Update parameter values across family files or whole folders.", "x": ["BIM"], "o": "ecg"}, {"n": "ECG Shared Parameters", "c": "Information", "s": "Revit", "d": "Add shared parameters to selected families.", "x": ["BIM"], "o": "ecg"}, {"n": "ECG Incrementor", "c": "Information", "s": "Revit", "d": "Renumber elements in sequence with prefix and suffix.", "x": ["STR", "ARCH", "MEP", "LS"], "o": "ecg"}, {"n": "ECG View Duplicator", "c": "Sheet Production", "s": "Revit", "d": "Duplicate multiple views at once.", "x": ["STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG PipeGrid", "c": "Modeling", "s": "Revit", "d": "Convert pipe networks from Civil 3D to Revit.", "x": ["MEP", "INF"], "o": "ecg"}, {"n": "ECG Struct Drop", "c": "Modeling", "s": "Revit", "d": "Create and modify drop panels for columns on slabs.", "x": ["STR"], "o": "ecg"}, {"n": "ECG Beam Generator", "c": "Modeling", "s": "Revit", "d": "Create and adjust beams between columns on slabs.", "x": ["STR"], "o": "ecg"}, {"n": "ECG STRF", "c": "Sheet Production", "s": "Revit", "d": "Annotate drawings for concrete walls, cores and tanks.", "x": ["STR"], "o": "ecg"}, {"n": "ECG Smart Exporter", "c": "Sheet Production", "s": "Revit", "d": "Export views and sheets to PDF, DWG, DGN and more.", "x": ["STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}, {"n": "ECG FamilyXport", "c": "Information", "s": "Revit", "d": "Export families as RFA, IFC, image and XML.", "x": ["BIM"], "o": "ecg"}, {"n": "ECG APP Manager", "c": "Information", "s": "Desktop app", "d": "Find, update and install all department tools in one place.", "x": ["BIM", "STR", "ARCH", "MEP", "LS", "INF"], "o": "ecg"}];
+  var dName={BIM:"BIM",STR:"Structure",ARCH:"Architecture",MEP:"MEP",LS:"Landscape",INF:"Infrastructure",Procurement:"Procurement",Tendering:"Tendering"};
+  var org="all",cat="All",q="",catsEl=document.getElementById("cats"),grid=document.getElementById("grid");
+  function esc(s){return String(s).replace(/[&<>"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch];});}
+  function inOrg(){return lib.filter(function(t){return org==="all"||t.o===org;});}
+  /* time data per tool: hours manual (m) and with tool (a). Fill when available. */
+  var times={};
+  function saved(t){var x=times[t.n];return x&&x.m>0&&x.a!=null?Math.round((1-x.a/x.m)*100):null;}
+  (function(){var ps=lib.map(saved).filter(function(v){return v!=null;});
+    document.getElementById("avgSave").textContent=ps.length?Math.round(ps.reduce(function(s,v){return s+v;},0)/ps.length)+"%":"—";})();
+  function drawCats(){
+    var set=inOrg(),cs=[];set.forEach(function(t){if(cs.indexOf(t.c)<0)cs.push(t.c);});
+    cs.sort(function(a,b){return set.filter(function(t){return t.c===b;}).length-set.filter(function(t){return t.c===a;}).length;});
+    var max=Math.max.apply(null,cs.map(function(c){return set.filter(function(t){return t.c===c;}).length;}));
+    catsEl.innerHTML=["All"].concat(cs).map(function(c){
+      var n=c==="All"?set.length:set.filter(function(t){return t.c===c;}).length;
+      return '<button class="cat" type="button" data-c="'+esc(c)+'" aria-pressed="'+(c===cat)+'"><b>'+n+'</b><span>'+(c==="All"?"All tools":esc(c))+'</span><i style="width:'+(c==="All"?100:Math.round(n/max*100))+'%"></i></button>';
+    }).join("");
+  }
+  function drawLib(){
+    var set=inOrg(),rows=set.filter(function(t){return (cat==="All"||t.c===cat)&&(!q||(t.n+" "+t.d+" "+t.s+" "+t.c).toLowerCase().indexOf(q)>-1);});
+    grid.innerHTML=rows.length?rows.map(function(t){
+      var p=profiles[t.n]||{};
+      return '<button type="button" class="tool'+(t.o==="zfg"?" zf":"")+'" data-i="'+lib.indexOf(t)+'"><div class="tool-top"><span class="k">'+esc(t.c)+(t.b?' · <em>'+t.b+'</em>':'')+'</span><span class="sw">'+esc(t.s)+'</span></div>'+
+        '<h5>'+esc(t.n)+'</h5><p>'+esc(t.d)+'</p><div class="disc">'+t.x.map(function(d){return '<span>'+(dName[d]||esc(d))+'</span>';}).join("")+'</div>'+
+        '<span class="more">'+(p.vid?'<span class="vid-badge">▶ VIDEO</span>':'')+(saved(t)!=null?'<span class="save-chip">'+saved(t)+'% faster</span>':'')+'View profile →</span></button>';
+    }).join(""):'<p class="empty">No tools match that search.</p>';
+    document.getElementById("libCount").textContent=rows.length+" OF "+set.length+" TOOLS";
+  }
+  catsEl.addEventListener("click",function(e){var b=e.target.closest(".cat");if(!b)return;cat=b.dataset.c;
+    [].forEach.call(catsEl.children,function(x){x.setAttribute("aria-pressed",x===b);});drawLib();});
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();drawLib();});
+  [].forEach.call(document.querySelectorAll(".obtn"),function(b){b.addEventListener("click",function(){
+    org=b.dataset.o;cat="All";[].forEach.call(document.querySelectorAll(".obtn"),function(x){x.setAttribute("aria-pressed",x===b);});
+    drawCats();drawLib();});});
+  drawCats();drawLib();
+
+
+  /* tool profile modal */
+  var modal=document.getElementById("modal"),mBody=document.getElementById("mBody"),lastFocus=null;
+  function openTool(i){
+    var t=lib[i],p=profiles[t.n]||{};lastFocus=document.activeElement;
+    document.getElementById("mCat").textContent=(t.o==="zfg"?"Zuhair Fayez Group":"ECG")+" · "+t.c+(p.v?" · "+p.v:"")+(t.b?" · "+t.b:"");
+    document.getElementById("mTitle").textContent=t.n;
+    var html='';
+    if(p.vid)html+='<div class="m-video"><video controls preload="metadata" playsinline'+(p.poster?' poster="'+p.poster+'"':'')+'><source src="'+p.vid+'" type="video/mp4"></video></div>';
+    html+='<p>'+esc(t.d)+'</p>';
+    if(p.f)html+='<ul class="m-feat">'+p.f.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>';
+    html+='<div class="m-meta"><div><span class="eyebrow">Platform</span><b>'+esc(t.s)+'</b></div>'+
+      '<div><span class="eyebrow">'+(p.compat?'Versions':'Category')+'</span><b>'+esc(p.compat||t.c)+'</b></div>'+
+      '<div><span class="eyebrow">Used by</span><b>'+(t.x.map(function(d){return dName[d]||d;}).join(", ")||"—")+'</b></div></div>';
+    var tm=times[t.n];if(tm&&tm.m>0&&tm.a!=null)html+='<div class="m-meta"><div><span class="eyebrow">Manual</span><b>'+tm.m+' h</b></div><div><span class="eyebrow">With tool</span><b>'+tm.a+' h</b></div><div><span class="eyebrow">Time saved</span><b style="color:var(--teal)">'+saved(t)+'%</b></div></div>';
+    if(p.guide)html+='<div class="m-links"><a class="btn" href="'+p.guide+'" target="_blank" rel="noopener">Open user guide (PDF)</a></div>';
+    mBody.innerHTML=html;modal.hidden=false;document.body.style.overflow="hidden";document.getElementById("mClose").focus();
+  }
+  function closeTool(){var v=mBody.querySelector("video");if(v)v.pause();modal.hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+  grid.addEventListener("click",function(e){var b=e.target.closest(".tool");if(b&&b.dataset.i!==undefined)openTool(+b.dataset.i);});
+  document.getElementById("mClose").addEventListener("click",closeTool);
+  modal.addEventListener("click",function(e){if(e.target===modal)closeTool();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!modal.hidden)closeTool();});
+
+  /* fit */
+  var fit=["GenAI & agentic AI in production","Python · RAG · LLM APIs","PDFs & unstructured data","Cloud & on-prem architecture","AI inside existing tools","Engineering & BIM background"];
+  var ck='<span class="ok"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>';
+  document.getElementById("fitgrid").innerHTML=fit.map(function(f){return '<div class="fit-row">'+ck+'<span>'+f+'</span></div>';}).join("");
+
+  /* tabs */
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(tab,focus){tabs.forEach(function(t){var on=t===tab;t.setAttribute("aria-selected",on);t.tabIndex=on?0:-1;
+    document.getElementById(t.getAttribute("aria-controls")).hidden=!on;});if(focus)tab.focus();}
+  tabs.forEach(function(t,i){t.addEventListener("click",function(){select(t);});
+    t.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();
+      select(tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length],true);}});});
+
+  /* copy */
+  var btn=document.getElementById("copy"),em=document.getElementById("email");
+  btn.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(em);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Selected, press Ctrl+C";}
+    try{navigator.clipboard.writeText(em.textContent).then(function(){btn.textContent="Copied";setTimeout(function(){btn.textContent="Copy email";},1800);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+
+</body>
+</html>
